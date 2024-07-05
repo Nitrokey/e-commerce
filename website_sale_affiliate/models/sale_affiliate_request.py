@@ -52,7 +52,6 @@ class AffiliateRequest(models.Model):
         help="Request session user agent",
     )
     accept_language = fields.Char(
-        required=True,
         default=lambda self: request.httprequest.headers.environ.get(
             "HTTP_ACCEPT_LANGUAGE",
         ),
